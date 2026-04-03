@@ -1,0 +1,542 @@
+/* CSS Variables for easy theme management */
+:root {
+    --primary: #2563eb;
+    --primary-light: #60a5fa;
+    --dark: #1e293b;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.8);
+    --background: #ffff;
+    --headline:#2c3e50;
+    --paragraft:#6c757d;
+    --text-hover:#357abd;
+    --card-bg:#e6f0fa;
+    --card-shadow:0 4px 8px rgba(74, 144, 226, 0, 15);
+    --card-border:#d0e3f3;
+    --button:#4a90e2;
+    --button-hover:#357abd;
+    --font-sans: 'Poppins', sans-serif;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--headline);
+    line-height: 1.6;
+}
+
+/* Reusable Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg);
+  box-shadow: 0 4px 15px rgba(0,0,0,.08);
+  z-index: 999;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 38px;
+}
+
+.logo span {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* NAV */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  border-radius: 12px;
+  min-width: 200px;
+  padding: 10px 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 18px;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(13,71,161,.08);
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background-color: #0a192f;
+  border-radius: 3px;
+  transition: .3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('background-osis.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;   
+    overflow: hidden;
+
+}
+
+.foto-osis {
+    width: auto;
+    padding: 80px;
+    height: 110vh;
+    
+   
+}
+
+.hero-overlay {
+    height: 300px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: white;
+    font-weight: 800;
+
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.hero-cta {
+    background-color: var(--button);
+    color: var(--headline);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.hero-cta:hover {
+    background-color: var(--button-hover);
+    color: white;
+}
+
+/* General Section Styling */
+.section-padding {
+    padding: 100px 0;
+}
+.section-dark {
+    background-color: var(--background);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--headline);
+    margin-bottom: 10px;
+}
+.section-title p {
+    color: var(--paragraft);
+    font-size: 1rem;
+}
+/* pejabat unti */
+/* Container Hirarki */
+.pejabat-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.double-member {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, 500px));
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+/* Card Styling */
+.card-member {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    border: 2px solid #f1f5f9;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 100%;
+}
+
+.card-member:hover {
+    transform: translateY(-12px);
+    border-color: #2563eb;
+    box-shadow: 0 20px 30px rgba(37, 99, 235, 0.1);
+}
+
+/* Frame Foto 3:4 */
+.card-image-frame {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border: 2px solid #2563eb;
+    padding: 8px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+}
+
+.inner-image-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+.inner-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: #2563eb;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* Typography & Buttons */
+.member-name {
+    font-size: 1.2rem;
+    margin: 0 0 12px 0 !important;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.btn-toggle {
+    flex: 1;
+    padding: 8px 5px;
+    border: 1.5px solid #2563eb;
+    background: transparent;
+    color: #2563eb;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-toggle.active {
+    background: #2563eb;
+    color: white;
+}
+
+.display-text {
+    width: 100%;
+    min-height: 65px;
+    font-size: 0.85rem;
+    color: #64748b;
+    padding: 10px;
+    background: #f8fafc;
+    border-radius: 12px;
+    display: block; /* Agar teks sejajar */
+    text-align: center;
+    line-height: 1.4;
+}
+
+
+
+
+/* Footer */
+#footer {
+    background-color: #0a192f;
+    padding: 60px 0;
+    border-top: 1px solid #303c55;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.footer-col h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+.footer-col p, .footer-col li {
+    margin-bottom: 10px;
+    color: white;
+}
+.footer-col ul {
+    list-style: none;
+}
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-col a:hover {
+    color: var(--text-hover);
+}
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid var(--light-navy);
+    font-size: 0.9rem;
+}
+
+/* Animation on Scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===================================================
+   RESPONSIVE CSS - HALAMAN UTAMA (HOME)
+   =================================================== */
+
+/* --- TABLET & LAPTOP (Max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .double-member {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 15px;
+    }
+}
+
+/* --- MOBILE (Max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* Navbar & Menu */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%; /* Sembunyi ke kiri */
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        gap: 20px;
+        transition: 0.4s ease;
+        display: flex; /* Override display: none */
+    }
+
+    .nav-links.show {
+        left: 0; /* Geser masuk */
+    }
+
+    /* Hero Section Fix (Jarak Foto & Tombol) */
+   .hero {
+        height: auto !important;
+        min-height: 100vh;
+        padding: 100px 0 50px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .foto-osis {
+        height: auto !important;
+        width: 100%;
+        max-width: 380px;
+        padding: 10px !important; /* Jarak foto dipersempit */
+        margin: 0 auto;
+    }
+
+    .foto-osis img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .hero-content {
+        margin-top: -15px; /* Menarik konten tombol ke atas */
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #0a192f;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        color: #0a192f;
+    }
+
+    /* Struktur Organisasi */
+    .pejabat-row {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .double-member {
+        grid-template-columns: 1fr; /* Stack kebawah di HP */
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .card-member {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+/* --- SMALL MOBILE (Max-width: 480px) --- */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.7rem;
+        color: #0a192f;
+        
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .card-image-frame {
+        aspect-ratio: 1 / 1; /* Foto kotak di layar sangat kecil */
+    }
+}
